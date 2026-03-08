@@ -1,0 +1,54 @@
+# ==========================================
+# Root .gitignore for ~/.config repository
+# ==========================================
+
+# ------------------------------------------
+# General system/editor files
+# ------------------------------------------
+# (macOS .DS_Store is already ignored in ~/.gitignore_global)
+*~
+*.bak
+*.swp
+*.orig
+
+# ------------------------------------------
+# Zsh Configuration
+# ------------------------------------------
+zsh/.secrets
+zsh/.zprofile.local
+zsh/*.pem
+zsh/*.key
+zsh/.zsh_history
+zsh/.zsh_sessions/
+zsh/.zhistory
+zsh/.zcompdump*
+zsh/*.zwc
+zsh/.zshrc.kaku-backup-*
+
+# ------------------------------------------
+# Kaku Terminal
+# ------------------------------------------
+# You may want to ignore Kaku's generated binaries/plugins since they
+# are automatically recreated when running `kaku init` on a new machine.
+# Uncomment the following if you want to ignore them:
+# kaku/zsh/bin/
+# kaku/zsh/plugins/
+kaku/lazygit_state.json
+kaku/state.json
+
+# ------------------------------------------
+# Editors & IDEs 
+github-copilot/
+zed/.tmp*
+zed/conversations/
+zed/embeddings/
+zed/settings_backup.json
+iterm2/sockets/
+
+# Tools & Utilities
+raycast/
+configstore/
+husky/
+gh/
+opencode/
+
