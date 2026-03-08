@@ -1,4 +1,6 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
+local session_manager = require 'plugins/wezterm-session-manager/session-manager'
 
 local function resolve_bundled_config()
   local resource_dir = wezterm.executable_dir:gsub('MacOS/?$', 'Resources')
@@ -48,6 +50,11 @@ else
   wezterm.log_error('Kaku: bundled defaults not found')
 end
 
+-- Initialize session manager plugin
+wezterm.on("save_session", function(window) session_manager.save_state(window) end)
+wezterm.on("load_session", function(window) session_manager.load_state(window) end)
+wezterm.on("restore_session", function(window) session_manager.restore_state(window) end)
+
 -- User overrides:
 -- Kaku intentionally keeps WezTerm-compatible Lua API names
 -- for maximum compatibility, so `wezterm.*` here is expected.
@@ -66,7 +73,7 @@ config.color_scheme = 'Vesper'
 -- 3) Window size and padding
 -- config.initial_cols = 120
 -- config.initial_rows = 30
--- config.window_padding = { left = '24px', right = '24px', top = '40px', bottom = '20px' }
+config.window_padding = { left = '4cell', right = '4cell', top = '2cell', bottom = '2cell' }
 --
 -- 4) Default shell/program
 config.default_prog = { '/bin/zsh', '-l' }
@@ -76,10 +83,38 @@ config.default_prog = { '/bin/zsh', '-l' }
 -- config.scrollback_lines = 20000
 --
 -- 6) Add or override a key binding
--- table.insert(config.keys, {
---   key = 'Enter',
---   mods = 'CMD|SHIFT',
---   action = wezterm.action.TogglePaneZoomState,
--- })
+table.insert(config.keys, { 
+  key = "l", 
+  mods = "ALT", 
+  action = act.ShowLauncherArgs { 
+    flags = "FUZZY|WORKSPACES" 
+  }
+})
+
+table.insert(config.keys, {
+    key = 'W',
+    mods = 'CMD|SHIFT',
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for new workspace' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
+})
+
+wezterm.on('update-right-status', function(window, pane)
+  window:set_right_status(window:active_workspace())
+end)
 
 return config
