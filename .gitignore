@@ -43,6 +43,7 @@ zed/.tmp*
 zed/conversations/
 zed/embeddings/
 zed/settings_backup.json
+zed/prompts/
 iterm2/sockets/
 
 # Tools & Utilities
