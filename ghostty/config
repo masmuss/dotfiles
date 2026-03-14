@@ -17,11 +17,11 @@ window-width = 120
 
 macos-titlebar-style = tabs
 
-theme = Gruvbox Material
+theme = Nord Wave
 
 # Background
-background-opacity = 1
-background-blur = false
+background-opacity = 0.9
+background-blur = true
 
 
 # keybinds
