@@ -9,7 +9,7 @@ window-save-state = always
 
 window-colorspace = "display-p3"
 window-padding-x = 24
-window-padding-y = 24
+window-padding-y = 0
 window-padding-balance = true
 
 window-height = 30
@@ -17,11 +17,17 @@ window-width = 120
 
 macos-titlebar-style = tabs
 
-theme = Nord Wave
+# theme = Nord Wave
+# theme = Kanagawa Dragon
+# theme = Kanso Zen
+# theme = Catppuccin Mocha
+theme = dark:Rose Pine,light:Rose Pine Dawn
 
 # Background
-background-opacity = 0.9
-background-blur = true
+background-opacity = 1
+background-blur = false
+
+unfocused-split-opacity = 1
 
 
 # keybinds

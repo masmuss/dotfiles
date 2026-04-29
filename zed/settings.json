@@ -1,46 +1,81 @@
 // Zed settings
 {
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "ssh_connections": [
+    {
+      "host": "kuanta-vps",
+      "args": [],
+      "projects": [],
+    },
+  ],
+  "agent_servers": {
+    "gemini": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+  },
+  "context_servers": {
+    "shadcn": {
+      "enabled": true,
+      "remote": false,
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"],
+    },
+    "laravel-boost": {
+      "enabled": true,
+      "remote": false,
+      "command": "php",
+      "args": ["artisan", "boost:mcp"],
+    },
+  },
   "title_bar": {
     "show_project_items": false,
-    "show_branch_icon": false,
     "show_onboarding_banner": false,
     "show_user_menu": false,
-    "show_branch_name": false
+    "show_branch_name": false,
   },
   "toolbar": {
-    "quick_actions": false
+    "quick_actions": false,
   },
   "status_bar": {
-    "experimental.show": false
+    "experimental.show": false,
   },
   "edit_predictions": {
-    "provider": "zed"
+    "provider": "zed",
   },
-  "buffer_font_weight": 300.0,
+  "buffer_font_weight": 400.0,
   "gutter": {
     "min_line_number_digits": 0,
-    "line_numbers": true
+    "line_numbers": true,
   },
   "soft_wrap": "preferred_line_length",
   "preferred_line_length": 120,
   "show_wrap_guides": false,
   "scrollbar": {
-    "show": "auto"
+    "show": "auto",
   },
   "icon_theme": "Material Icon Theme",
   "base_keymap": "VSCode",
   "agent": {
+    "dock": "right",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
-    }
+      "provider": "copilot_chat",
+      "model": "gpt-4o",
+    },
   },
   "theme": "Min Dark (Solid)",
   "buffer_font_size": 13.0,
   "buffer_line_height": {
-    "custom": 3.0
+    "custom": 3.5,
   },
-  "buffer_font_family": "Liga SFMono Nerd Font",
+  "buffer_font_family": "Lilex Nerd Font",
   "ui_font_family": "JetBrains Mono NL",
   "ui_font_size": 16,
   "confirm_quit": false,
@@ -58,38 +93,39 @@
     "sticky_scroll": false,
     "entry_spacing": "comfortable",
     "indent_guides": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
   "outline_panel": {
+    "dock": "left",
     "default_width": 300,
     "indent_guides": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
   "file_finder": {
-    "modal_max_width": "large"
+    "modal_max_width": "large",
   },
   "tab_bar": {
-    "show": false
+    "show": false,
   },
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
   "terminal": {
     "shell": {
-      "program": "zsh"
-    }
+      "program": "zsh",
+    },
   },
   "lsp": {
     "biome": {
       "binary": {
         "path": "npx",
-        "arguments": ["@biomejs/biome", "lsp-proxy"]
-      }
+        "arguments": ["@biomejs/biome", "lsp-proxy"],
+      },
     },
     "wakatime": {
-      "settings": {}
+      "settings": {},
     },
     "typescript-language-server": {
       "initialization_options": {
@@ -101,10 +137,10 @@
           "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
           "includeInlayPropertyDeclarationTypeHints": true,
           "includeInlayFunctionLikeReturnTypeHints": true,
-          "includeInlayEnumMemberValueHints": true
-        }
-      }
-    }
+          "includeInlayEnumMemberValueHints": true,
+        },
+      },
+    },
   },
   "languages": {
     "TypeScript": {
@@ -112,42 +148,27 @@
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": [
-            "@biomejs/biome",
-            "format",
-            "--stdin-file-path",
-            "{buffer_path}"
-          ]
-        }
-      }
+          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+        },
+      },
     },
     "JavaScript": {
       "format_on_save": "on",
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": [
-            "@biomejs/biome",
-            "format",
-            "--stdin-file-path",
-            "{buffer_path}"
-          ]
-        }
-      }
+          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+        },
+      },
     },
     "JSON": {
       "format_on_save": "on",
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": [
-            "@biomejs/biome",
-            "format",
-            "--stdin-file-path",
-            "{buffer_path}"
-          ]
-        }
-      }
-    }
-  }
+          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+        },
+      },
+    },
+  },
 }

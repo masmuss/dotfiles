@@ -24,10 +24,16 @@ source $ZSH/oh-my-zsh.sh
 #------------Aliases------------
 
 # Directory listing (eza)
-alias tree='eza -a --tree --color always --icons --group-directories-first'
-alias ls='eza --color always --icons --group-directories-first'
-alias la='eza -a -l -b --color always --icons --group-directories-first'
-alias ll='eza -l -b --color always --icons --group-directories-first'
+if command -v eza &>/dev/null; then
+  alias tree='eza -a --tree --color always --icons --group-directories-first'
+  alias ls='eza --color always --icons --group-directories-first'
+  alias la='eza -a -l -b --color always --icons --group-directories-first'
+  alias ll='eza -l -b --color always --icons --group-directories-first'
+else
+  alias tree='ls -laR'
+  alias la='ls -la'
+  alias ll='ls -l'
+fi
 
 # Navigation
 alias ..='cd ..'
@@ -42,6 +48,7 @@ alias cdown='docker compose down'
 
 # Laravel
 alias artisan='php artisan'
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # Tools
 alias vim='nvim'
@@ -51,6 +58,7 @@ alias zshconfig='nvim $ZDOTDIR/.zshrc'
 # Utilities
 alias h='history'
 alias ff='fastfetch'
+alias y='yazi'
 
 # Project scaffolding
 alias shadcn-init='bunx --bun shadcn@latest init'
@@ -91,9 +99,17 @@ load-nvmrc() {
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Ruby (chruby)
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.5
+if [ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]; then
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+fi
+if [ -f /opt/homebrew/opt/chruby/share/chruby/auto.sh ]; then
+  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+fi
+if command -v chruby &>/dev/null; then
+  if chruby | grep -q "ruby-3.3.5"; then
+    chruby ruby-3.3.5
+  fi
+fi
 
 # Terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -119,6 +135,11 @@ load-nvmrc
 
 #------------Prompt------------
 
-eval "$(starship init zsh)"
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
 
 [[ "$TERM" == "kaku" && -f "/Users/khoirul/.config/kaku/zsh/kaku.zsh" ]] && source "/Users/khoirul/.config/kaku/zsh/kaku.zsh" # Kaku Shell Integration
+
+# bun completions
+[ -s "/Users/khoirul/.bun/_bun" ] && source "/Users/khoirul/.bun/_bun"
