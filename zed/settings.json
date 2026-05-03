@@ -1,5 +1,6 @@
 // Zed settings
 {
+  "cli_default_open_behavior": "existing_window",
   "collaboration_panel": {
     "dock": "left",
   },
@@ -61,16 +62,18 @@
   "scrollbar": {
     "show": "auto",
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "base_keymap": "VSCode",
   "agent": {
     "dock": "right",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "gpt-4o",
+      "model": "gemini-3.1-pro-preview",
     },
   },
-  "theme": "Min Dark (Solid)",
+  "theme": "Rich Vesper",
   "buffer_font_size": 13.0,
   "buffer_line_height": {
     "custom": 3.5,

@@ -16,7 +16,6 @@ add_newline = false
 # """
 
 format = """
-$os\
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -134,7 +133,7 @@ truncation_length = 1
 "Others" = " "
 
 [os]
-disabled = false
+disabled = true
 #style = "bg:surface0 fg:text"
 
 [custom.giturl]
@@ -250,10 +249,10 @@ disabled = true
 
 [character]
 disabled = false
-# success_symbol = '[ ](bold fg:green)'
-success_symbol = '👍🏻'
-# error_symbol = '[✘ ](bold fg:red)'
-error_symbol = '👎🏻'
+success_symbol = '[ ](bold fg:green)'
+# success_symbol = '👍🏻'
+error_symbol = '[✘ ](bold fg:red)'
+# error_symbol = '👎🏻'
 vimcmd_symbol = "[ :](bold yellow)"
 vimcmd_replace_one_symbol = "[󰝿 :](bold purple)"
 vimcmd_replace_symbol = "[  :](bold purple)"

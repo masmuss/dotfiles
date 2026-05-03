@@ -11,6 +11,12 @@
 *.swp
 *.orig
 
+# System generated files
+**/*.log
+filezilla/lockfile
+filezilla/queue.sqlite3
+ghostty/auto/theme.ghostty
+
 # ------------------------------------------
 # Zsh Configuration
 # ------------------------------------------

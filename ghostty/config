@@ -21,7 +21,9 @@ macos-titlebar-style = tabs
 # theme = Kanagawa Dragon
 # theme = Kanso Zen
 # theme = Catppuccin Mocha
-theme = dark:Rose Pine,light:Rose Pine Dawn
+# theme = dark:Rose Pine,light:Rose Pine Dawn
+# theme = Gruvbox Dark
+theme = Vesper
 
 # Background
 background-opacity = 1
