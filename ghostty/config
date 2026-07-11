@@ -1,4 +1,4 @@
-font-family = Liga SFMono Nerd Font Regular
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 14
 
 mouse-hide-while-typing = true
@@ -8,7 +8,7 @@ adjust-cell-height = 80%
 window-save-state = always
 
 window-colorspace = "display-p3"
-window-padding-x = 24
+window-padding-x = 16
 window-padding-y = 0
 window-padding-balance = true
 
@@ -23,13 +23,14 @@ macos-titlebar-style = tabs
 # theme = Catppuccin Mocha
 # theme = dark:Rose Pine,light:Rose Pine Dawn
 # theme = Gruvbox Dark
-theme = Vesper
+# theme = Vesper
+theme = Pnevma
 
 # Background
-background-opacity = 1
-background-blur = false
+background-opacity = 0.8
+background-blur = true
 
-unfocused-split-opacity = 1
+# unfocused-split-opacity = 1
 
 
 # keybinds

@@ -43,7 +43,7 @@ kaku/lazygit_state.json
 kaku/state.json
 
 # ------------------------------------------
-# Editors & IDEs 
+# Editors & IDEs
 github-copilot/
 zed/.tmp*
 zed/conversations/
@@ -59,3 +59,9 @@ husky/
 gh/
 opencode/
 
+# Tools - runtime data (not config)
+psysh/
+simple-update-notifier/
+Autodesk/
+jgit/
+.mono/

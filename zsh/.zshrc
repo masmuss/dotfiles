@@ -65,32 +65,9 @@ alias shadcn-init='bunx --bun shadcn@latest init'
 alias drizzle-pg-init='bun add drizzle-orm pg dotenv && bun add -D drizzle-kit tsx @types/pg'
 alias biome-init='bun add -d @biomejs/biome && bunx --bun biome init'
 
-#------------Functions------------
-
-# Auto-switch Node version based on .nvmrc
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
 #------------Tool Integrations------------
-
-# NVM
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+# fnm
+eval "$(fnm env --use-on-cd)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -126,20 +103,15 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
-#------------Hooks------------
-
-# Auto-load .nvmrc on directory change
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
 #------------Prompt------------
 
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 fi
 
-[[ "$TERM" == "kaku" && -f "/Users/khoirul/.config/kaku/zsh/kaku.zsh" ]] && source "/Users/khoirul/.config/kaku/zsh/kaku.zsh" # Kaku Shell Integration
-
 # bun completions
 [ -s "/Users/khoirul/.bun/_bun" ] && source "/Users/khoirul/.bun/_bun"
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";

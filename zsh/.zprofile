@@ -23,9 +23,6 @@ export BUN_INSTALL="$HOME/.bun"
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-
 #------------All PATHS------------
 
 # Local binaries
