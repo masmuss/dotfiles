@@ -1,0 +1,80 @@
+format = """
+$directory\
+$character"""
+
+right_format = """
+$git_branch\
+$git_status\
+$nodejs\
+$golang"""
+
+add_newline = false
+
+[character]
+success_symbol = "[➜](bold fg:green) "
+error_symbol = "[✘](bold fg:red) "
+
+[directory]
+truncation_length = 1
+
+[git_status]
+format = '[$staged$modified$renamed$deleted$untracked$conflicted$ahead_behind]($style)'
+
+staged     = '[+${count} ](green)'
+modified   = '[!${count} ](yellow)'
+renamed    = '[»${count} ](blue)'
+deleted    = '[-${count} ](red)'
+untracked  = '[?${count} ](sapphire)'
+stashed    = '[≡${count} ](lavender)'
+conflicted = '[✖${count} ](red bold)'
+
+ahead      = '[⇡${count} ](teal)'
+behind     = '[⇣${count} ](peach)'
+diverged   = '[⇕⇡${ahead_count}⇣${behind_count} ](mauve)'
+
+[git_branch]
+symbol = " "
+
+[nodejs]
+disabled = false
+format = '[ $symbol( $version) ]($style)'
+symbol = "📦"
+
+[golang]
+format = "[ $symbol( $version) ]($style)"
+detect_files = ["go.mod", "go.sum", "glide.yaml", "go.sum"]
+disabled = false
+symbol = "🐹"
+
+[python]
+disabled = true
+
+[rust]
+disabled = true
+
+[package]
+disabled = true
+
+[ruby]
+disabled = true
+
+[php]
+disabled = true
+
+[java]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[terraform]
+disabled = true
+
+[docker_context]
+disabled = true

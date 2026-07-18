@@ -1,10 +1,19 @@
 // Zed settings
 {
+  "agent_ui_font_size": 15.0,
+  "agent_buffer_font_size": 14.0,
+  "diff_view_style": "split",
+  "language_models": {
+    "opencode": {
+      "show_zen_models": false,
+    },
+  },
   "cli_default_open_behavior": "existing_window",
   "collaboration_panel": {
     "dock": "left",
   },
   "git_panel": {
+    "tree_view": true,
     "dock": "left",
   },
   "ssh_connections": [
@@ -51,7 +60,7 @@
     "show_project_items": false,
     "show_onboarding_banner": false,
     "show_user_menu": false,
-    "show_branch_name": false,
+    "show_branch_name": true,
   },
   "toolbar": {
     "quick_actions": false,
@@ -62,22 +71,56 @@
   "edit_predictions": {
     "provider": "zed",
   },
-  "buffer_font_weight": 400.0,
+  "buffer_font_weight": 400,
   "gutter": {
     "min_line_number_digits": 0,
     "line_numbers": true,
   },
-  "soft_wrap": "prefer_line",
-  "preferred_line_length": 120,
+  "soft_wrap": "bounded",
+  "preferred_line_length": 80,
   "show_wrap_guides": false,
   "scrollbar": {
     "show": "auto",
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": "Soft Charmed Icons",
   "base_keymap": "VSCode",
   "agent": {
-    "default_profile": "ask",
+    "sandbox_permissions": {
+      "network_hosts": ["github.com", "api.github.com"],
+    },
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^php\\s+artisan(\\s|$)"
+            },
+            {
+              "pattern": "^git\\b"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^bunx\\s+tsc(\\s|$)"
+            },
+            {
+              "pattern": "^grep\\b"
+            },
+            {
+              "pattern": "^ls\\b"
+            },
+            {
+              "pattern": "^gh\\s+issue(\\s|$)"
+            }
+          ],
+        },
+      },
+    },
+    "notify_when_agent_waiting": "all_screens",
+    "default_profile": "write",
     "dock": "right",
+    "commit_message_instructions": "Use the conventional commits format: <type>(<scope>): <description>\n\n[optional body]\n\n[optional footer(s)]",
     "default_model": {
       "effort": "max",
       "enable_thinking": true,
@@ -85,12 +128,12 @@
       "model": "go/deepseek-v4-pro",
     },
   },
-  "theme": "Carbonfox - blurred",
+  "theme": "Yukinord",
   "buffer_font_size": 13.0,
   "buffer_line_height": {
     "custom": 3.5,
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "MesloLGL Nerd Font Mono",
   "ui_font_family": "JetBrains Mono NL",
   "ui_font_size": 16,
   "confirm_quit": false,
@@ -129,13 +172,14 @@
   },
   "terminal": {
     "scrollbar": {
-      "show": "auto"
+      "show": "auto",
     },
     "shell": {
       "program": "zsh",
     },
     "font_size": 14,
-    "font_family": "JetBrainsMono Nerd Font Mono",
+    "line_height": "comfortable",
+    "font_family": "JetBrainsMonoNL Nerd Font Mono",
   },
   "lsp": {
     "biome": {
@@ -168,7 +212,12 @@
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+          "arguments": [
+            "@biomejs/biome",
+            "format",
+            "--stdin-file-path",
+            "{buffer_path}",
+          ],
         },
       },
     },
@@ -177,7 +226,12 @@
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+          "arguments": [
+            "@biomejs/biome",
+            "format",
+            "--stdin-file-path",
+            "{buffer_path}",
+          ],
         },
       },
     },
@@ -186,7 +240,12 @@
       "formatter": {
         "external": {
           "command": "npx",
-          "arguments": ["@biomejs/biome", "format", "--stdin-file-path", "{buffer_path}"],
+          "arguments": [
+            "@biomejs/biome",
+            "format",
+            "--stdin-file-path",
+            "{buffer_path}",
+          ],
         },
       },
     },

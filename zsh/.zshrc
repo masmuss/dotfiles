@@ -60,6 +60,10 @@ alias h='history'
 alias ff='fastfetch'
 alias y='yazi'
 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
 # Project scaffolding
 alias shadcn-init='bunx --bun shadcn@latest init'
 alias drizzle-pg-init='bun add drizzle-orm pg dotenv && bun add -D drizzle-kit tsx @types/pg'
