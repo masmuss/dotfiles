@@ -1,5 +1,8 @@
 // Zed settings
 {
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
   "agent_ui_font_size": 15.0,
   "agent_buffer_font_size": 14.0,
   "diff_view_style": "split",
@@ -16,40 +19,24 @@
     "tree_view": true,
     "dock": "left",
   },
-  "ssh_connections": [
-    {
-      "host": "kuanta-vps",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/www/wwwroot"],
-        },
-        {
-          "paths": ["/www/wwwroot/eduos/soalku/./"],
-        },
-      ],
-    },
-  ],
-  "agent_servers": {
-    "gemini": {
-      "type": "registry",
-    },
-    "github-copilot-cli": {
-      "type": "registry",
-    },
-  },
   "context_servers": {
     "shadcn": {
       "enabled": true,
       "remote": false,
       "command": "npx",
-      "args": ["shadcn@latest", "mcp"],
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ],
     },
     "laravel-boost": {
       "enabled": true,
       "remote": false,
       "command": "php",
-      "args": ["artisan", "boost:mcp"],
+      "args": [
+        "artisan",
+        "boost:mcp"
+      ],
     },
     "Astro docs": {
       "enabled": true,
@@ -57,7 +44,8 @@
     },
   },
   "title_bar": {
-    "show_project_items": false,
+    "show_branch_status_icon": true,
+    "show_project_items": true,
     "show_onboarding_banner": false,
     "show_user_menu": false,
     "show_branch_name": true,
@@ -66,53 +54,54 @@
     "quick_actions": false,
   },
   "status_bar": {
-    "experimental.show": false,
+    "experimental.show": true,
   },
-  "edit_predictions": {
-    "provider": "zed",
-  },
-  "buffer_font_weight": 400,
   "gutter": {
     "min_line_number_digits": 0,
     "line_numbers": true,
   },
   "soft_wrap": "bounded",
-  "preferred_line_length": 80,
   "show_wrap_guides": false,
-  "scrollbar": {
-    "show": "auto",
-  },
   "icon_theme": "Soft Charmed Icons",
   "base_keymap": "VSCode",
   "agent": {
+    "commit_message_model": {
+      "provider": "opencode",
+      "model": "minimax-m2.7"
+    },
+    "play_sound_when_agent_done": "when_hidden",
     "sandbox_permissions": {
-      "network_hosts": ["github.com", "api.github.com"],
+      "network_hosts": [
+        "github.com",
+        "api.github.com"
+      ],
     },
     "tool_permissions": {
       "tools": {
         "terminal": {
+          "default": "allow",
           "always_allow": [
             {
-              "pattern": "^php\\s+artisan(\\s|$)"
+              "pattern": "^php\\s+artisan(\\s|$)",
             },
             {
-              "pattern": "^git\\b"
+              "pattern": "^git\\b",
             },
             {
-              "pattern": "^head\\b"
+              "pattern": "^head\\b",
             },
             {
-              "pattern": "^bunx\\s+tsc(\\s|$)"
+              "pattern": "^bunx\\s+tsc(\\s|$)",
             },
             {
-              "pattern": "^grep\\b"
+              "pattern": "^grep\\b",
             },
             {
-              "pattern": "^ls\\b"
+              "pattern": "^ls\\b",
             },
             {
-              "pattern": "^gh\\s+issue(\\s|$)"
-            }
+              "pattern": "^gh\\s+issue(\\s|$)",
+            },
           ],
         },
       },
@@ -128,16 +117,16 @@
       "model": "go/deepseek-v4-pro",
     },
   },
-  "theme": "Yukinord",
-  "buffer_font_size": 13.0,
+  "theme": "Lumin",
+  "buffer_font_size": 14.0,
   "buffer_line_height": {
-    "custom": 3.5,
+    "custom": 3,
   },
-  "buffer_font_family": "MesloLGL Nerd Font Mono",
-  "ui_font_family": "JetBrains Mono NL",
+  "buffer_font_family": "Kode Mono",
+  "ui_font_family": "Kode Mono",
   "ui_font_size": 16,
   "confirm_quit": false,
-  "vim_mode": false,
+  "vim_mode": true,
   "relative_line_numbers": "disabled",
   "autosave": "on_focus_change",
   "format_on_save": "on",
@@ -171,9 +160,6 @@
     "enabled": false,
   },
   "terminal": {
-    "scrollbar": {
-      "show": "auto",
-    },
     "shell": {
       "program": "zsh",
     },
@@ -185,7 +171,10 @@
     "biome": {
       "binary": {
         "path": "npx",
-        "arguments": ["@biomejs/biome", "lsp-proxy"],
+        "arguments": [
+          "@biomejs/biome",
+          "lsp-proxy"
+        ],
       },
     },
     "wakatime": {
@@ -237,17 +226,11 @@
     },
     "JSON": {
       "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "npx",
-          "arguments": [
-            "@biomejs/biome",
-            "format",
-            "--stdin-file-path",
-            "{buffer_path}",
-          ],
-        },
-      },
+      "formatter": "language_server",
+    },
+    "JSONC": {
+      "format_on_save": "on",
+      "formatter": "language_server",
     },
   },
 }
