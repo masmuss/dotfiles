@@ -6,7 +6,6 @@ Everything is centralized in the `~/.config` directory and managed via Git.
 ## 📁 Structure
 
 - **zsh/**: My Zsh configuration, aliases, and environment variables.
-- **kaku/**: Kaku Terminal settings and Zsh integrations.
 - **nvim/**: Neovim configuration.
 - **ghostty/**: Ghostty terminal emulator configuration.
 - **starship/**: Starship cross-shell prompt configuration.
