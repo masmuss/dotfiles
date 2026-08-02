@@ -120,10 +120,10 @@
   "theme": "Lumin",
   "buffer_font_size": 14.0,
   "buffer_line_height": {
-    "custom": 3,
+    "custom": 3.5,
   },
-  "buffer_font_family": "Kode Mono",
-  "ui_font_family": "Kode Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_size": 16,
   "confirm_quit": false,
   "vim_mode": true,
@@ -161,16 +161,22 @@
   },
   "terminal": {
     "shell": {
-      "program": "zsh",
-    },
-    "font_size": 14,
-    "line_height": "comfortable",
-    "font_family": "JetBrainsMonoNL Nerd Font Mono",
+      "with_arguments": {
+        "program": "zsh",
+        "args": [
+          "-l"
+        ],
+        "title_override": null
+      }
+    }
   },
   "lsp": {
     "biome": {
+      "settings": {
+        "require_config_file": true
+      },
       "binary": {
-        "path": "npx",
+        "path": "bunx",
         "arguments": [
           "@biomejs/biome",
           "lsp-proxy"

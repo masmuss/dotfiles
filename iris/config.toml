@@ -1,0 +1,21 @@
+[core]
+version = 1
+shell = "zsh"
+mode = "last"
+debug = false
+
+[ui]
+style = "modern"
+ghost-text = true
+max-suggestions = 100
+max-height = 15
+nerd-fonts = true
+
+[git]
+filter-active-branch = true
+deduplicate-branches = true
+
+[updater]
+check-on-startup = true
+channel = "stable" # "stable" or "nightly"
+check-interval = "24h"

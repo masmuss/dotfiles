@@ -10,7 +10,6 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
-  zsh-autosuggestions
   dirhistory
   fzf
   command-not-found
@@ -71,7 +70,9 @@ alias biome-init='bun add -d @biomejs/biome && bunx --bun biome init'
 
 #------------Tool Integrations------------
 # fnm
-eval "$(fnm env --use-on-cd)"
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -119,3 +120,10 @@ fi
 # proto
 export PROTO_HOME="$HOME/.proto";
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+
+# Iris Autocomplete
+eval "$(iris init zsh)"
+
+if command -v iris >/dev/null 2>&1; then
+  alias i="iris"
+fi
