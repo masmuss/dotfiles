@@ -1,4 +1,4 @@
-font-family = Reddit Mono
+font-family = JetBrains Mono
 font-size = 14
 
 mouse-hide-while-typing = true
@@ -15,19 +15,14 @@ window-padding-balance = true
 window-height = 30
 window-width = 120
 
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 
-# theme = Nord Wave
-# theme = Kanagawa Dragon
-# theme = Kanso Zen
-# theme = Catppuccin Mocha
-# theme = dark:Rose Pine,light:Rose Pine Dawn
-# theme = Gruvbox Dark
-# theme = Vesper
-theme = Pnevma
+theme = Vesper
+# theme = Pnevma
+# theme = Everforest Dark Hard
 
 # Background
-background-opacity = 0.9
+background-opacity = 1
 background-blur = true
 
 # unfocused-split-opacity = 1

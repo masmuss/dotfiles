@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "codebase-memory-mcp": { "command": "/Users/khoirul/.local/bin/codebase-memory-mcp", "args": [] }
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+    {
+        "hooks": [
+            {
+                "type": "command",
+                "command": "'/Users/khoirul/.local/bin/codebase-memory-mcp' hook-augment --dialect devin",
+                "timeout": 5
+            }
+        ]
+    }
+],
+    "PostCompaction": [
+    {
+        "hooks": [
+            {
+                "type": "command",
+                "command": "'/Users/khoirul/.local/bin/codebase-memory-mcp' hook-augment --dialect devin",
+                "timeout": 5
+            }
+        ]
+    }
+]
+  }
+}

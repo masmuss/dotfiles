@@ -1,0 +1,8 @@
+{
+  "mcp": {
+    "codebase-memory-mcp": {"command":"/Users/khoirul/.local/bin/codebase-memory-mcp","args":[],"type":"stdio"}
+  },
+  "options": {
+    "context_paths": ["/Users/khoirul/.config/crush/codebase-memory.md"]
+  }
+}
