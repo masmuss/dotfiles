@@ -1,5 +1,16 @@
 // Zed settings
 {
+  "prettier": {
+    
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+  },
   "vim": {
     "toggle_relative_line_numbers": true,
   },
@@ -62,12 +73,28 @@
   },
   "soft_wrap": "bounded",
   "show_wrap_guides": false,
-  "icon_theme": "Soft Charmed Icons",
+  "icon_theme": "Symbols Icon Theme",
   "base_keymap": "VSCode",
   "agent": {
+    "threads_sidebar": {
+      "position": "left"
+    },
+    "favorite_models": [
+      {
+        "provider": "opencode",
+        "model": "go/deepseek-v4-pro",
+        "enable_thinking": true,
+        "effort": "max"
+      },
+      {
+        "provider": "opencode",
+        "model": "go/qwen3.7-max",
+        "enable_thinking": false
+      }
+    ],
     "commit_message_model": {
       "provider": "opencode",
-      "model": "minimax-m2.7"
+      "model": "minimax-m2.7",
     },
     "play_sound_when_agent_done": "when_hidden",
     "sandbox_permissions": {
@@ -111,19 +138,19 @@
     "dock": "right",
     "commit_message_instructions": "Use the conventional commits format: <type>(<scope>): <description>\n\n[optional body]\n\n[optional footer(s)]",
     "default_model": {
-      "effort": "max",
+      "effort": "high",
       "enable_thinking": true,
-      "provider": "opencode",
-      "model": "go/deepseek-v4-pro",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
     },
   },
-  "theme": "Lumin",
+  "theme": "Vitesse Refined Dark",
   "buffer_font_size": 14.0,
   "buffer_line_height": {
     "custom": 3.5,
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "CommitMono Nerd Font Mono",
+  "ui_font_family": "CommitMono Nerd Font Mono",
   "ui_font_size": 16,
   "confirm_quit": false,
   "vim_mode": true,
@@ -140,7 +167,7 @@
     "sticky_scroll": true,
     "entry_spacing": "comfortable",
     "indent_guides": {
-      "show": "always",
+      "show": "never",
     },
   },
   "outline_panel": {
@@ -151,7 +178,7 @@
     },
   },
   "file_finder": {
-    "modal_max_width": "large",
+    "modal_max_width": "medium",
   },
   "tab_bar": {
     "show": false,
@@ -160,20 +187,27 @@
     "enabled": false,
   },
   "terminal": {
-    "shell": {
-      "with_arguments": {
-        "program": "zsh",
-        "args": [
-          "-l"
-        ],
-        "title_override": null
-      }
-    }
+    "shell": "system",
   },
   "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    },
     "biome": {
       "settings": {
-        "require_config_file": true
+        "require_config_file": true,
       },
       "binary": {
         "path": "bunx",
