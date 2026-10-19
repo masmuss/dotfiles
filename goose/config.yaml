@@ -1,0 +1,7 @@
+extensions:
+  codebase-memory-mcp:
+    name: codebase-memory-mcp
+    type: stdio
+    cmd: "/Users/khoirul/.local/bin/codebase-memory-mcp"
+    args: []
+    enabled: true
